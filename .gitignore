@@ -1,1 +1,9 @@
 .DS_Store
+data/raw/
+data/processed/
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.gpkg
