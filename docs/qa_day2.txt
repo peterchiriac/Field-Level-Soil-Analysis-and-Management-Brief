@@ -1,0 +1,100 @@
+                 List of relations
+ Schema |           Name            | Type  | Owner 
+--------+---------------------------+-------+-------
+ public | dim_fields                | table | peter
+ public | spatial_ref_sys           | table | peter
+ public | stg_lpis_2023_parcels_raw | table | peter
+(3 rows)
+
+                                                                 Table "public.stg_lpis_2023_parcels_raw"
+   Column   |          Type          | Collation | Nullable |                        Default                         | Storage  | Compression | Stats target | Description 
+------------+------------------------+-----------+----------+--------------------------------------------------------+----------+-------------+--------------+-------------
+ gid        | integer                |           | not null | nextval('stg_lpis_2023_parcels_raw_gid_seq'::regclass) | plain    |             |              | 
+ geom       | geometry(Polygon,4326) |           |          |                                                        | main     |             |              | 
+ app_herd   | character varying(50)  |           |          |                                                        | extended |             |              | 
+ herd       | character varying(50)  |           |          |                                                        | extended |             |              | 
+ par_lab    | character varying(50)  |           |          |                                                        | extended |             |              | 
+ claim_area | numeric(11,3)          |           |          |                                                        | main     |             |              | 
+ crop       | character varying(100) |           |          |                                                        | extended |             |              | 
+ digitised  | numeric(30,15)         |           |          |                                                        | main     |             |              | 
+ eh_area    | numeric(11,2)          |           |          |                                                        | main     |             |              | 
+ com_den    | numeric(11,0)          |           |          |                                                        | main     |             |              | 
+ com_num    | numeric(11,0)          |           |          |                                                        | main     |             |              | 
+ sub_div    | numeric(6,0)           |           |          |                                                        | main     |             |              | 
+ comm_ind   | character varying(1)   |           |          |                                                        | extended |             |              | 
+ olr        | character varying(9)   |           |          |                                                        | extended |             |              | 
+ grasslnd   | character varying(1)   |           |          |                                                        | extended |             |              | 
+ tillage    | character varying(1)   |           |          |                                                        | extended |             |              | 
+ perm_ind   | character varying(1)   |           |          |                                                        | extended |             |              | 
+ arabl_ind  | character varying(1)   |           |          |                                                        | extended |             |              | 
+ sim_ind    | character varying(1)   |           |          |                                                        | extended |             |              | 
+ biss       | character varying(1)   |           |          |                                                        | extended |             |              | 
+ eco        | character varying(1)   |           |          |                                                        | extended |             |              | 
+ criss      | character varying(1)   |           |          |                                                        | extended |             |              | 
+ protein    | character varying(1)   |           |          |                                                        | extended |             |              | 
+ cisyf      | character varying(1)   |           |          |                                                        | extended |             |              | 
+ anc        | character varying(1)   |           |          |                                                        | extended |             |              | 
+ acres      | character varying(1)   |           |          |                                                        | extended |             |              | 
+ organics   | character varying(1)   |           |          |                                                        | extended |             |              | 
+ sim        | character varying(1)   |           |          |                                                        | extended |             |              | 
+ md_area    | numeric(30,15)         |           |          |                                                        | main     |             |              | 
+ fad_area   | numeric(30,15)         |           |          |                                                        | main     |             |              | 
+ fad_desc   | character varying(200) |           |          |                                                        | extended |             |              | 
+ md_desc    | character varying(200) |           |          |                                                        | extended |             |              | 
+ sysdate    | character varying(21)  |           |          |                                                        | extended |             |              | 
+Indexes:
+    "stg_lpis_2023_parcels_raw_pkey" PRIMARY KEY, btree (gid)
+    "stg_lpis_2023_parcels_raw_geom_geom_idx" gist (geom)
+Access method: heap
+
+                                                 Table "public.dim_fields"
+   Column   |          Type          | Collation | Nullable | Default | Storage  | Compression | Stats target | Description 
+------------+------------------------+-----------+----------+---------+----------+-------------+--------------+-------------
+ field_id   | text                   |           | not null |         | extended |             |              | 
+ farm_name  | text                   |           |          |         | extended |             |              | 
+ field_name | text                   |           |          |         | extended |             |              | 
+ crop       | text                   |           |          |         | extended |             |              | 
+ geom       | geometry(Polygon,4326) |           |          |         | main     |             |              | 
+Indexes:
+    "dim_fields_pkey" PRIMARY KEY, btree (field_id)
+Access method: heap
+
+ n_staging 
+-----------
+      5000
+(1 row)
+
+ n_dim_fields 
+--------------
+         4965
+(1 row)
+
+ n_invalid 
+-----------
+         0
+(1 row)
+
+             field_id             | area_ha 
+----------------------------------+---------
+ 93F203D9C8729EC699F4E2E43C5755CC |   96.66
+ 940614B0CE170D5D6103D79207DDBE66 |   94.79
+ 3ACEF0209F33459F5876186280266134 |   85.75
+ C4E84B38A59100E58C1DF47F8907969D |   75.12
+ 389E2BE2A785C5B0CCC9934331B0F37F |   72.76
+ 1DB86BBEE7C280CE44C44D9D77696B81 |   69.91
+ 78D05ED913BBA11CACF8EA0DFEBDA701 |   69.02
+ 86EA7C6E2B2E8DCBB1847267B3D8E6B3 |   68.46
+ 96893782A5E4318FBABE8E753F2B7BE1 |   64.30
+ 2FA65135A63162D602794A88C3F7BFC8 |   64.10
+ 5C1F3510C0B9DE85CD27185171CFD5A9 |   63.78
+ C8A6439A4461E1FB37B84EDE6E50F77C |   62.34
+ 77ADED98FDB9EBB987D8B4B8CE60BE28 |   60.18
+ 30ACD51F5FA21151715A63C73595963A |   59.86
+ 637938EA3C99644CA3F58EF78E684724 |   59.77
+ 22D7A38BC938D3162CD532D7DFD333E3 |   56.94
+ 070F9D6E2408FB1E1B67B039FF80E35A |   56.87
+ 2DD27223BA4B2721780B8703D48E8C88 |   56.81
+ 3FF8FB97D10E5BB016832D57FA004586 |   56.19
+ 5228976BE8DA89522238472BCDEE2A4B |   54.69
+(20 rows)
+
