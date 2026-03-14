@@ -1,0 +1,29 @@
+                                List of installed extensions
+  Name   | Version |   Schema   |                        Description                         
+---------+---------+------------+------------------------------------------------------------
+ plpgsql | 1.0     | pg_catalog | PL/pgSQL procedural language
+ postgis | 3.6.2   | public     | PostGIS geometry and geography spatial types and functions
+(2 rows)
+
+                                                 Table "public.dim_fields"
+   Column   |          Type          | Collation | Nullable | Default | Storage  | Compression | Stats target | Description 
+------------+------------------------+-----------+----------+---------+----------+-------------+--------------+-------------
+ field_id   | text                   |           | not null |         | extended |             |              | 
+ farm_name  | text                   |           |          |         | extended |             |              | 
+ field_name | text                   |           |          |         | extended |             |              | 
+ crop       | text                   |           |          |         | extended |             |              | 
+ geom       | geometry(Polygon,4326) |           |          |         | main     |             |              | 
+Indexes:
+    "dim_fields_pkey" PRIMARY KEY, btree (field_id)
+Access method: heap
+
+ field_id | is_valid | validity_reason 
+----------+----------+-----------------
+ F001     | t        | Valid Geometry
+(1 row)
+
+ field_id | area_ha 
+----------+---------
+ F001     | 1194.65
+(1 row)
+
