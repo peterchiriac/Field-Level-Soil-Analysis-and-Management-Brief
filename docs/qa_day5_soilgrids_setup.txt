@@ -1,0 +1,8 @@
+Session 5 — SoilGrids setup and field-level extraction
+
+- Loaded SoilGrids rasters for pH, SOC, clay, and sand at 0–5 cm depth into QGIS
+- Confirmed alignment with the LPIS parcel layer
+- Identify-tool checks showed valid overlap in covered areas
+- Part of south-west Ireland returned NoData across all four variables
+- Full-layer WCS processing was too slow, so v1 proceeded using a covered working subset
+- A first zonal-statistics test on a valid subset ran successfully
