@@ -1,6 +1,6 @@
 # Field Boundary QA + Soil Variability Brief
 
-A hireable, audit-ready spatial analytics project that ingests real field boundaries, validates them, summarises soil properties at field level, and produces modest decision-support outputs.
+This project demonstrates how raw field-boundary and soil data can be turned into trustworthy field-level screening outputs for operational review and agronomic prioritisation
 
 ## Project Objective
 
