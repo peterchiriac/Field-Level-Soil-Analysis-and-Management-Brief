@@ -6,7 +6,7 @@ This project demonstrates how field-boundary and soil data can be transformed in
 
 A subset of Irish LPIS parcels was selected to define Farm Alpha, a coherent analysis unit. SoilGrids data was aggregated to field level and interpreted into clear, actionable outputs.
 
-![Recommended Action Map](docs/maps/farm_alpha_recommended_action.png)
+![Recommended Action Map](docs/maps/farm_alpha_recommended_action.png) 
 
 ### Key result:
 
