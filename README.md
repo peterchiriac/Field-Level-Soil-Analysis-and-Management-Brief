@@ -1,6 +1,6 @@
-Farm Alpha — Soil Analysis & Management Recommendations
+# Farm Alpha — Soil Analysis & Management Recommendations
 
-Executive Summary
+## Executive Summary
 
 This project demonstrates how field-boundary and soil data can be transformed into field-level management recommendations through spatial QA, soil summarisation, and map-based decision support.
 
@@ -8,7 +8,7 @@ A subset of Irish LPIS parcels was selected to define Farm Alpha, a coherent ana
 
 ![Recommended Action Map](docs/maps/farm_alpha_recommended_action.png)
 
-Key result:
+### Key result:
 
 * Soil pH is consistently low across the farm → whole-farm liming required
 * Soil organic carbon (SOC) is moderate to high → generally good soil condition
@@ -18,7 +18,7 @@ These findings were translated into a final Recommended Action Map, showing wher
 
 ⸻
 
-Project Objective
+## Project Objective
 
 To build a credible, real-world agritech workflow that moves from:
 
@@ -32,7 +32,7 @@ The focus is not on model complexity, but on:
 
 ⸻
 
-Key Outputs
+## Key Outputs
 
 1. Farm Alpha Overview
 
@@ -66,7 +66,7 @@ This map answers: “What should be done, and where?”
 
 ⸻
 
-Key Findings
+## Key Findings
 
 * Soil pH is consistently low across the farm, indicating a need for liming at scale
 * SOC levels are moderate to high, suggesting generally good organic matter status
@@ -75,7 +75,7 @@ Key Findings
 
 ⸻
 
-Recommended Actions
+## Recommended Actions
 
 * Apply lime across all fields to address acidity
 * Prioritise structural caution and monitoring on clay-influenced parcels
@@ -83,7 +83,7 @@ Recommended Actions
 
 ⸻
 
-Data Sources
+## Data Sources
 
 Field Boundaries
 
@@ -104,7 +104,7 @@ Soil Data
 
 ⸻
 
-Method Overview (Condensed)
+## Method Overview 
 
 1. Ingest
     * LPIS parcels loaded into PostGIS
@@ -127,7 +127,7 @@ Method Overview (Condensed)
 
 ⸻
 
-Technical Implementation
+## Technical Implementation
 
 * PostgreSQL 17
 * PostGIS
@@ -144,7 +144,7 @@ Full workflow and SQL scripts are available in:
 
 ⸻
 
-QA Summary
+## QA Summary
 
 * Invalid geometries: 0
 * Overlapping field pairs: 11 (negligible sliver overlaps)
@@ -153,7 +153,7 @@ QA Summary
 
 ⸻
 
-Limitations
+## Limitations
 
 * SoilGrids provides modelled estimates, not direct sampling
 * Only 0–5 cm depth used for v1
@@ -163,7 +163,7 @@ Limitations
 
 ⸻
 
-Why This Project Matters
+## Why This Project Matters
 
 This project demonstrates the ability to:
 
@@ -179,7 +179,7 @@ data → insight → action
 
 ⸻
 
-Next Steps / Extensions
+## Next Steps / Extensions
 
 * Formalise a mart_field table in Postgres
 * Extend soil coverage beyond current subset
