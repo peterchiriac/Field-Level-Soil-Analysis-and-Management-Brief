@@ -1,202 +1,188 @@
-# Field Boundary QA + Soil Variability Brief
+Farm Alpha — Soil Analysis & Management Recommendations
 
-This project demonstrates how raw field-boundary and soil data can be turned into trustworthy field-level screening outputs for operational review and agronomic prioritisation
+Executive Summary
 
-## Project Objective
+This project demonstrates how field-boundary and soil data can be transformed into field-level management recommendations through spatial QA, soil summarisation, and map-based decision support.
 
-This project was built to demonstrate a practical agritech-style workflow:
+A subset of Irish LPIS parcels was selected to define Farm Alpha, a coherent analysis unit. SoilGrids data was aggregated to field level and interpreted into clear, actionable outputs.
 
-- ingest real field-boundary data
-- validate and quality-check the spatial layer
-- add a real external soil source
-- summarise soil properties at field level
-- derive modest screening flags
-- produce map-based and written outputs
+![Recommended Action Map](docs/maps/farm_alpha_recommended_action.png)
 
-The aim was not to build a full production agronomy platform, but to create a credible v1 that reflects real analytical work: structured ingest, QA, reproducibility, field-level summaries, and restrained interpretation.
+Key result:
 
-## Core Deliverables
+* Soil pH is consistently low across the farm → whole-farm liming required
+* Soil organic carbon (SOC) is moderate to high → generally good soil condition
+* Clay-influenced parcels require additional structural caution
 
-### 1. Field boundary quality report
-- invalid geometries
-- overlaps between fields
-- missing / duplicated IDs
-- area outliers
+These findings were translated into a final Recommended Action Map, showing where intervention is required and where standard management is sufficient.
 
-### 2. Soil summary per field
-- SoilGrids-based field summaries for:
-  - pH
-  - SOC
-  - clay
-  - sand
-- depth interval: 0–5 cm
+⸻
 
-### 3. Field screening flags
-- pH band
-- low SOC flag
-- simple texture note
+Project Objective
 
-### 4. Outputs
-- field-level mart-style output layer
-- 2–3 exported QGIS maps
-- `docs/findings.md`
-- `docs/field_brief_sample.md`
+To build a credible, real-world agritech workflow that moves from:
 
-## Data Sources
+raw spatial data → validated dataset → field-level summaries → interpretable outputs → actionable recommendations
 
-### Field boundaries
-- Irish LPIS parcel sample
-- source format: Shapefile
-- source CRS: EPSG:2157
-- ingested into PostGIS and reprojected to EPSG:4326 for canonical storage
+The focus is not on model complexity, but on:
 
-### Soil layer
-- SoilGrids rasters
-- variables used:
-  - pH
-  - SOC
-  - clay
-  - sand
-- depth used:
-  - 0–5 cm
+* data trustworthiness
+* clear interpretation
+* decision-oriented outputs
 
-## Tech Stack
+⸻
 
-- PostgreSQL 17
-- PostGIS
-- QGIS
-- GDAL / `ogrinfo` / `ogr2ogr`
-- SQL
-- Markdown documentation
+Key Outputs
 
-## Workflow
+1. Farm Alpha Overview
 
-### 1. Setup
-- created project repo
-- created `field_brief` database
-- enabled PostGIS
-- created `dim_fields`
+Defines the selected analysis unit within a larger LPIS dataset.
 
-### 2. Ingest
-- imported Irish LPIS parcel sample into staging:
-  - `stg_lpis_2023_parcels_raw`
-- promoted unique parcel rows into:
-  - `dim_fields`
+2. Soil pH Status
 
-### 3. Spatial QA
-- geometry validity checks
-- overlap checks
-- area outlier checks
+Shows that pH is consistently below optimal levels across nearly all fields.
 
-### 4. Soil workflow
-- loaded SoilGrids rasters into QGIS
-- identified usable overlap area
-- confirmed `NoData` limitation in part of south-west Ireland
-- generated field-level zonal statistics on a covered subset
+Insight: acidity is a farm-wide constraint, not a localised issue.
 
-### 5. Interpretation
-- converted SoilGrids values into readable units
-- created:
-  - `ph_band`
-  - `soc_flag`
-  - `texture_note`
+⸻
 
-### 6. Outputs
-- exported screening maps
-- wrote findings summary
-- wrote sample field brief
+3. Soil Organic Carbon (SOC) Status
 
-## Project Structure
+Field-level SOC classification (g/kg).
 
-```text
-field-qa-soil-brief/
-├── data/
-│   ├── raw/
-│   └── processed/
-├── docs/
-│   ├── findings.md
-│   ├── field_brief_sample.md
-│   ├── qa_day2.txt
-│   ├── qa_day3_overlaps.txt
-│   ├── qa_day4_area_outliers.txt
-│   └── maps/
-├── sql/
-│   ├── 01_day1_setup.sql
-│   ├── 02_import_fields.sql
-│   ├── 03_qa_overlaps.sql
-│   └── 04_qa_area_outliers.sql
-└── runbook.md
-```
+Insight: SOC is moderate to high, with stronger values in central parcels.
 
-## Key Findings
+⸻
 
-See `docs/findings.md` for the core findings summary.
+4. Recommended Action Map (primary output)
 
-### Highlights
-- invalid geometries in `dim_fields`: 0
-- overlap QA found 11 intersecting field pairs involving 16 fields
-- maximum overlap area was only 0.000075 m², indicating negligible slivers rather than material overlaps
-- area-outlier QA identified 50 low-area and 50 high-area outliers using 1st and 99th percentile thresholds
-- SoilGrids field summaries were generated for pH, SOC, clay, and sand at 0–5 cm depth
-- a sample field brief was produced using the enriched output layer
+Combines pH status and texture signals into a decision layer:
 
-## Example Outputs
-- thematic map: pH band
-- thematic map: low SOC screening flag
-- thematic map: simple texture note
-- findings page: `docs/findings.md`￼
-- sample field brief: `docs/field_brief_sample.md`￼
+* Lime + Monitor structure → low pH + clay-influenced fields
+* Lime (standard) → low pH, normal structure
+* Monitor → near-threshold pH
 
-## QA Summary
+This map answers: “What should be done, and where?”
 
-### Geometry validity
-- invalid geometries: 0
+⸻
 
-### Overlaps
-- overlapping pairs: 11
-- affected fields: 16
-- maximum overlap: 0.000075 m²
+Key Findings
 
-### Area outliers
-- min area: 0.0071 ha
-- max area: 33.4782 ha
-- median area: 2.2373 ha
-- P01: 0.0562 ha
-- P99: 14.8479 ha
-- low outliers: 50
-- high outliers: 50
+* Soil pH is consistently low across the farm, indicating a need for liming at scale
+* SOC levels are moderate to high, suggesting generally good organic matter status
+* Spatial variation in SOC exists but is not a primary constraint
+* Clay-influenced parcels present additional operational risk (drainage, compaction)
 
-## Soil Variable Conversions
+⸻
 
-For interpretation, SoilGrids values were converted into more readable units:
-- `ph_val = ph_mean / 10`
-- `soc_gkg = soc_mean / 10`
-- `clay_pct = clay_mean / 10`
-- `sand_pct = sand_mean / 10`
+Recommended Actions
 
-## Limitations
-- SoilGrids is modelled gridded soil data rather than direct field sampling
-- only the 0–5 cm depth interval was used for v1
-- part of south-west Ireland returned `NoData` across all four SoilGrids variables
-- because full-layer WCS processing was too slow, the soil workflow used a covered working subset rather than the full LPIS extent
-- interpretation fields are screening-level outputs, not agronomic prescriptions
+* Apply lime across all fields to address acidity
+* Prioritise structural caution and monitoring on clay-influenced parcels
+* Maintain current practices supporting SOC levels
 
-## Why This Project Matters
+⸻
 
-This project demonstrates the ability to take real spatial data from ingest and QA through to field-level summarisation, screening outputs, and clear communication of limitations.
+Data Sources
 
-It shows:
-- raw → staging → canonical thinking
-- spatial QA and auditability
-- field-level summarisation
-- restrained interpretation
-- communication through maps and written outputs
+Field Boundaries
 
-In short, it shows how spatial data can be turned into a trustworthy field-level decision-support artefact.
+* Irish LPIS parcel sample
+* Source CRS: EPSG:2157
+* Stored in PostGIS as EPSG:4326 (canonical)
 
-## Next Possible Extensions
-- formalise a `mart_field` table in Postgres
-- extend beyond the covered subset
-- add weather-based field context
-- add NDVI / raster vegetation signals
-- compare external soil surfaces with direct soil samples
+Soil Data
+
+* SoilGrids raster layers
+* Variables:
+    * pH
+    * SOC
+    * clay
+    * sand
+* Depth:
+    * 0–5 cm
+
+⸻
+
+Method Overview (Condensed)
+
+1. Ingest
+    * LPIS parcels loaded into PostGIS
+    * Canonical dim_fields table created
+2. Spatial QA
+    * geometry validity checks
+    * overlap detection
+    * area outlier analysis
+3. Soil Integration
+    * SoilGrids layers processed in QGIS
+    * zonal statistics applied to field polygons
+4. Field-Level Interpretation
+    * conversion to readable units
+    * creation of:
+        * pH_band
+        * SOC bands
+        * texture_note
+5. Decision Layer
+    * synthesis of variables into recommended_action
+
+⸻
+
+Technical Implementation
+
+* PostgreSQL 17
+* PostGIS
+* QGIS
+* GDAL (ogr2ogr, ogrinfo)
+* SQL
+* Markdown documentation
+
+Full workflow and SQL scripts are available in:
+
+* sql/
+* runbook.md
+* docs/qa_*
+
+⸻
+
+QA Summary
+
+* Invalid geometries: 0
+* Overlapping field pairs: 11 (negligible sliver overlaps)
+* Area outliers identified using P01 / P99 thresholds
+* Soil summaries successfully generated on a covered subset
+
+⸻
+
+Limitations
+
+* SoilGrids provides modelled estimates, not direct sampling
+* Only 0–5 cm depth used for v1
+* Partial NoData coverage in south-west Ireland
+* Soil workflow applied to a subset, not full national coverage
+* Outputs are screening-level, not full agronomic prescriptions
+
+⸻
+
+Why This Project Matters
+
+This project demonstrates the ability to:
+
+* transform raw spatial data into trustworthy field-level outputs
+* apply QA discipline to geospatial datasets
+* summarise raster data into operational units (fields)
+* produce clear, restrained interpretations
+* deliver decision-support artefacts, not just analysis
+
+In essence, it bridges:
+
+data → insight → action
+
+⸻
+
+Next Steps / Extensions
+
+* Formalise a mart_field table in Postgres
+* Extend soil coverage beyond current subset
+* Integrate weather data (rainfall windows, temperature)
+* Add NDVI / vegetation signals
+* Compare SoilGrids outputs with real soil samples
