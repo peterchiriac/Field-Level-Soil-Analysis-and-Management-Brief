@@ -7,3 +7,4 @@ data/processed/
 *.prj
 *.cpg
 *.gpkg
+.DS_Store
