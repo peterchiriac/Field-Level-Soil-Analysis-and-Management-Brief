@@ -1,4 +1,4 @@
-# Farm Alpha — Soil Analysis & Management Recommendations
+# Farm Alpha — Soil Analysis & Management Recommendations  
 
 ## Executive Summary
 
