@@ -8,7 +8,7 @@ A subset of Irish LPIS parcels was selected to define Farm Alpha, a coherent ana
 
 ![Recommended Action Map](docs/maps/farm_alpha_recommended_action.png)
 
-### Key result:
+## Key results:
 
 * Soil pH is consistently low across the farm → whole-farm liming required
 * Soil organic carbon (SOC) is moderate to high → generally good soil condition
@@ -16,7 +16,7 @@ A subset of Irish LPIS parcels was selected to define Farm Alpha, a coherent ana
 
 These findings were translated into a final Recommended Action Map, showing where intervention is required and where standard management is sufficient.
 
-⸻
+---
 
 ## Project Objective
 
@@ -30,7 +30,7 @@ The focus is not on model complexity, but on:
 * clear interpretation
 * decision-oriented outputs
 
-⸻
+---
 
 ## Key Outputs
 
@@ -44,7 +44,7 @@ Shows that pH is consistently below optimal levels across nearly all fields.
 
 Insight: acidity is a farm-wide constraint, not a localised issue.
 
-⸻
+---
 
 3. Soil Organic Carbon (SOC) Status
 
@@ -52,7 +52,7 @@ Field-level SOC classification (g/kg).
 
 Insight: SOC is moderate to high, with stronger values in central parcels.
 
-⸻
+---
 
 4. Recommended Action Map (primary output)
 
@@ -64,7 +64,7 @@ Combines pH status and texture signals into a decision layer:
 
 This map answers: “What should be done, and where?”
 
-⸻
+---
 
 ## Key Findings
 
@@ -73,7 +73,7 @@ This map answers: “What should be done, and where?”
 * Spatial variation in SOC exists but is not a primary constraint
 * Clay-influenced parcels present additional operational risk (drainage, compaction)
 
-⸻
+---
 
 ## Recommended Actions
 
@@ -81,7 +81,7 @@ This map answers: “What should be done, and where?”
 * Prioritise structural caution and monitoring on clay-influenced parcels
 * Maintain current practices supporting SOC levels
 
-⸻
+---
 
 ## Data Sources
 
@@ -102,7 +102,7 @@ Soil Data
 * Depth:
     * 0–5 cm
 
-⸻
+---
 
 ## Method Overview 
 
@@ -125,7 +125,7 @@ Soil Data
 5. Decision Layer
     * synthesis of variables into recommended_action
 
-⸻
+---
 
 ## Technical Implementation
 
@@ -142,7 +142,7 @@ Full workflow and SQL scripts are available in:
 * runbook.md
 * docs/qa_*
 
-⸻
+---
 
 ## QA Summary
 
@@ -151,7 +151,7 @@ Full workflow and SQL scripts are available in:
 * Area outliers identified using P01 / P99 thresholds
 * Soil summaries successfully generated on a covered subset
 
-⸻
+---
 
 ## Limitations
 
@@ -161,7 +161,7 @@ Full workflow and SQL scripts are available in:
 * Soil workflow applied to a subset, not full national coverage
 * Outputs are screening-level, not full agronomic prescriptions
 
-⸻
+---
 
 ## Why This Project Matters
 
@@ -177,7 +177,7 @@ In essence, it bridges:
 
 data → insight → action
 
-⸻
+---
 
 ## Next Steps / Extensions
 
