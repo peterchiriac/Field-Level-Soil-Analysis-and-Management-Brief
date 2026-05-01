@@ -20,7 +20,7 @@ These findings were translated into a final Recommended Action Map, showing wher
 
 ## Project Objective
 
-To build a credible, real-world agritech workflow that moves from:
+This project implements an end-to-end agritech workflow that transforms raw spatial and soil data into field-level management recommendations.
 
 raw spatial data → validated dataset → field-level summaries → interpretable outputs → actionable recommendations
 
