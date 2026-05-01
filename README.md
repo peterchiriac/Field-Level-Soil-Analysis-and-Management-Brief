@@ -24,11 +24,7 @@ This project implements an end-to-end agritech workflow that transforms raw spat
 
 raw spatial data → validated dataset → field-level summaries → interpretable outputs → actionable recommendations
 
-The focus is not on model complexity, but on:
-
-* data trustworthiness
-* clear interpretation
-* decision-oriented outputs
+The workflow prioritises data trustworthiness, clear interpretation, and decision-oriented outputs over model complexity.
 
 ---
 
