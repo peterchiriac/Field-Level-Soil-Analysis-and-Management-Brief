@@ -2,19 +2,19 @@
 
 ## Executive Summary
 
-This project demonstrates how field-boundary and soil data can be transformed into field-level management recommendations through spatial QA, soil summarisation, and map-based decision support.
+This project implements a field-level agritech workflow that transforms spatial and soil data into management recommendations using spatial QA, field-level aggregation, and decision mapping.
 
-A subset of Irish LPIS parcels was selected to define Farm Alpha, a coherent analysis unit. SoilGrids data was aggregated to field level and interpreted into clear, actionable outputs.
+Farm Alpha was defined from a subset of Irish LPIS parcels and used as the analysis unit for integrating SoilGrids data into field-level outputs.
 
 ![Recommended Action Map](docs/maps/farm_alpha_recommended_action.png)
 
-## Key results:
+## Key Results
 
-* Soil pH is consistently low across the farm → whole-farm liming required
+**Soil pH** is consistently low across the farm → whole-farm liming required
 * Soil organic carbon (SOC) is moderate to high → generally good soil condition
 * Clay-influenced parcels require additional structural caution
 
-These findings were translated into a final Recommended Action Map, showing where intervention is required and where standard management is sufficient.
+These findings were consolidated into a Recommended Action Map identifying where intervention is required and where standard management is sufficient.
 
 ---
 
@@ -25,6 +25,10 @@ This project implements an end-to-end agritech workflow that transforms raw spat
 raw spatial data → validated dataset → field-level summaries → interpretable outputs → actionable recommendations
 
 The workflow prioritises data trustworthiness, clear interpretation, and decision-oriented outputs over model complexity.
+
+## Use Case
+
+This workflow supports early-stage field assessment by identifying farm-wide constraints (e.g. acidity) and field-level operational risks (e.g. clay structure), enabling prioritised intervention planning.
 
 ---
 
@@ -46,7 +50,7 @@ Insight: acidity is a farm-wide constraint, not a localised issue.
 
 Field-level SOC classification (g/kg).
 
-Insight: SOC is moderate to high, with stronger values in central parcels.
+Insight: SOC is moderate to high across the farm and is not a limiting factor for current management.
 
 ---
 
@@ -58,7 +62,7 @@ Combines pH status and texture signals into a decision layer:
 * Lime (standard) → low pH, normal structure
 * Monitor → near-threshold pH
 
-This map answers: “What should be done, and where?”
+Primary output: a Recommended Action Map that specifies required interventions at field level.
 
 ---
 
