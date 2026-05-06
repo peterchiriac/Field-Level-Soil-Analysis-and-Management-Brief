@@ -152,18 +152,24 @@ The resulting map identifies where intervention is required and where standard m
 
 ## Technical Implementation
 
+### Database & Spatial Processing
+
 * PostgreSQL 17
 * PostGIS
+* GDAL (`ogr2ogr`, `ogrinfo`)
+
+---
+
+### GIS & Analysis
+
 * QGIS
-* GDAL (ogr2ogr, ogrinfo)
 * SQL
-* Markdown documentation
 
-Full workflow and SQL scripts are available in:
+---
 
-* sql/
-* runbook.md
-* docs/qa_*
+### Documentation
+
+* Markdown-based workflow and QA documentation
 
 ---
 
