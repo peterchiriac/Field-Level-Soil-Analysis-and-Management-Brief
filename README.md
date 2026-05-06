@@ -108,26 +108,43 @@ Soil Data
 
 ---
 
-## Method Overview 
+## Method Overview
 
-1. Ingest
-    * LPIS parcels loaded into PostGIS
-    * Canonical dim_fields table created
-2. Spatial QA
-    * geometry validity checks
-    * overlap detection
-    * area outlier analysis
-3. Soil Integration
-    * SoilGrids layers processed in QGIS
-    * zonal statistics applied to field polygons
-4. Field-Level Interpretation
-    * conversion to readable units
-    * creation of:
-        * pH_band
-        * SOC bands
-        * texture_note
-5. Decision Layer
-    * synthesis of variables into recommended_action
+### Data Ingest
+
+* LPIS parcel data loaded into PostGIS
+* Canonical `dim_fields` table established in EPSG:4326
+
+---
+
+### Spatial QA
+
+* Geometry validity checks
+* Overlap detection
+* Area outlier analysis
+
+---
+
+### Soil Integration
+
+* SoilGrids raster layers processed in QGIS
+* Zonal statistics applied to field polygons
+
+---
+
+### Field-Level Interpretation
+
+* Soil variables converted into interpretable field-level indicators
+* Classification layers derived for:
+    * `pH_band`
+    * `SOC_band`
+    * `texture_note`
+
+---
+
+### Decision Layer
+
+* Soil indicators synthesised into a `recommended_action` layer for operational decision support
 
 ---
 
