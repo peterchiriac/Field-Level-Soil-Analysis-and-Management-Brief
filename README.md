@@ -189,19 +189,21 @@ Key QA results:
 
 ---
 
-## Why This Project Matters
+## Decision-Support Value
 
-This project demonstrates the ability to:
+This workflow shows how spatial and soil data can be transformed into operational decision support through structured QA, field-level aggregation, and restrained interpretation.
 
-* transform raw spatial data into trustworthy field-level outputs
-* apply QA discipline to geospatial datasets
-* summarise raster data into operational units (fields)
-* produce clear, restrained interpretations
-* deliver decision-support artefacts, not just analysis
+Key capabilities demonstrated include:
 
-In essence, it bridges:
+* transforming raw spatial data into trustworthy field-level outputs
+* applying QA discipline to geospatial datasets
+* aggregating raster data into operational management units
+* producing interpretable and decision-oriented outputs
+* translating technical analysis into actionable recommendations
 
-data → insight → action
+In practical terms, the workflow bridges:
+
+**data → interpretation → operational action**
 
 ---
 
