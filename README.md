@@ -167,10 +167,15 @@ Full workflow and SQL scripts are available in:
 
 ## QA Summary
 
-* Invalid geometries: 0
-* Overlapping field pairs: 11 (negligible sliver overlaps)
-* Area outliers identified using P01 / P99 thresholds
-* Soil summaries successfully generated on a covered subset
+Spatial QA checks were performed prior to soil aggregation to ensure field-level outputs were technically reliable and operationally interpretable.
+
+Key QA results:
+
+* Invalid geometries detected: **0**
+* Overlapping field pairs identified: **11**
+    * overlaps were negligible sliver artefacts rather than materially conflicting geometries
+* Area outliers screened using **P01 / P99 threshold analysis**
+* Soil summaries successfully generated across the covered analysis subset
 
 ---
 
