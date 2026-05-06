@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This project implements a field-level agritech workflow that transforms spatial and soil data into management recommendations using spatial QA, field-level aggregation, and decision mapping.
+This project implements a field-level agritech workflow that transforms spatial and soil data into management recommendations through spatial QA, field-level aggregation, and decision mapping
 
 Farm Alpha was defined from a subset of Irish LPIS parcels and used as the analysis unit for integrating SoilGrids data into field-level outputs.
 
@@ -22,13 +22,14 @@ These findings were consolidated into a Recommended Action Map identifying where
 
 This project implements an end-to-end agritech workflow that transforms raw spatial and soil data into field-level management recommendations.
 
+**Pipeline:**  
 raw spatial data → validated dataset → field-level summaries → interpretable outputs → actionable recommendations
 
 The workflow prioritises data trustworthiness, clear interpretation, and decision-oriented outputs over model complexity.
 
 ## Use Case
 
-This workflow supports early-stage field assessment by identifying farm-wide constraints (e.g. acidity) and field-level operational risks (e.g. clay structure), enabling prioritised intervention planning.
+This workflow supports early-stage field assessment by identifying farm-wide constraints such as acidity and field-level operational risks such as clay-influenced structure, enabling prioritised intervention planning.
 
 ---
 
@@ -36,13 +37,13 @@ This workflow supports early-stage field assessment by identifying farm-wide con
 
 ### Farm Alpha Overview
 
-Defines the analysis unit used for field-level soil assessment within a subset of Irish LPIS parcels.
+Farm Alpha defines the analysis unit used for field-level soil assessment within a subset of Irish LPIS parcels.
 
 ---
 
 ### Soil pH Status
 
-Field-level pH classification showing consistently acidic conditions across most parcels.
+pH classification showing consistently acidic conditions across most parcels.
 
 Interpretation: acidity is a farm-wide constraint requiring broad liming intervention rather than isolated treatment.
 
@@ -66,7 +67,7 @@ Decision categories:
 * **Lime (Standard)** → low pH + normal structure
 * **Monitor** → near-threshold pH
 
-The resulting map identifies where intervention is required and where standard management is sufficient.
+The resulting map identifies where intervention should be prioritised and where standard management practices remain sufficient.
 
 ---
 
