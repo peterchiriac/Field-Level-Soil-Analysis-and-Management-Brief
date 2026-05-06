@@ -34,35 +34,39 @@ This workflow supports early-stage field assessment by identifying farm-wide con
 
 ## Key Outputs
 
-1. Farm Alpha Overview
+### Farm Alpha Overview
 
-Defines the selected analysis unit within a larger LPIS dataset.
-
-2. Soil pH Status
-
-Shows that pH is consistently below optimal levels across nearly all fields.
-
-Insight: acidity is a farm-wide constraint, not a localised issue.
+Defines the analysis unit used for field-level soil assessment within a subset of Irish LPIS parcels.
 
 ---
 
-3. Soil Organic Carbon (SOC) Status
+### Soil pH Status
 
-Field-level SOC classification (g/kg).
+Field-level pH classification showing consistently acidic conditions across most parcels.
 
-Insight: SOC is moderate to high across the farm and is not a limiting factor for current management.
+Interpretation: acidity is a farm-wide constraint requiring broad liming intervention rather than isolated treatment.
 
 ---
 
-4. Recommended Action Map (primary output)
+### Soil Organic Carbon (SOC) Status
 
-Combines pH status and texture signals into a decision layer:
+Field-level SOC classification (g/kg) derived from SoilGrids aggregation.
 
-* Lime + Monitor structure → low pH + clay-influenced fields
-* Lime (standard) → low pH, normal structure
-* Monitor → near-threshold pH
+Interpretation: SOC levels are moderate to high across the farm and are not currently a primary management constraint.
 
-Primary output: a Recommended Action Map that specifies required interventions at field level.
+---
+
+### Recommended Action Map
+
+Primary decision-support output combining pH status and texture signals into field-level recommendations.
+
+Decision categories:
+
+* **Lime + Monitor Structure** → low pH + clay-influenced fields
+* **Lime (Standard)** → low pH + normal structure
+* **Monitor** → near-threshold pH
+
+The resulting map identifies where intervention is required and where standard management is sufficient.
 
 ---
 
