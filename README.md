@@ -10,9 +10,9 @@ Farm Alpha was defined from a subset of Irish LPIS parcels and used as the analy
 
 ## Key Results
 
-**Soil pH** is consistently low across the farm → whole-farm liming required
-**Soil organic carbon (SOC)** is moderate to high → generally good soil condition
-**Clay-influenced parcels** require additional structural caution
+* Soil pH is consistently low across the farm → whole-farm liming required
+* Soil organic carbon (SOC) is moderate to high → generally good soil condition
+* Clay-influenced parcels require additional structural caution
 
 These findings were consolidated into a Recommended Action Map identifying where intervention is required and where standard management is sufficient.
 
