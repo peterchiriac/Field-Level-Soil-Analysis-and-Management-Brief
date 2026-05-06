@@ -116,7 +116,7 @@ The resulting map identifies where intervention should be prioritised and where 
 ### Data Ingest
 
 * LPIS parcel data loaded into PostGIS
-* Canonical `dim_fields` table established in EPSG:4326
+* Canonical `dim_fields` table established in `EPSG:4326`
 
 ---
 
@@ -176,7 +176,7 @@ The resulting map identifies where intervention should be prioritised and where 
 
 ## QA Summary
 
-Spatial QA checks were performed prior to soil aggregation to ensure field-level outputs were technically reliable and operationally interpretable.
+Spatial QA checks were performed prior to soil aggregation and interpretation to ensure field-level outputs were technically reliable and operationally interpretable.
 
 Key QA results:
 
@@ -202,7 +202,7 @@ Key QA results:
 
 This workflow shows how spatial and soil data can be transformed into operational decision support through structured QA, field-level aggregation, and restrained interpretation.
 
-Key capabilities demonstrated include:
+Core workflow capabilities include:
 
 * transforming raw spatial data into trustworthy field-level outputs
 * applying QA discipline to geospatial datasets
@@ -212,7 +212,7 @@ Key capabilities demonstrated include:
 
 In practical terms, the workflow bridges:
 
-**data → interpretation → operational action**
+**raw spatial and soil data → operational decision support**
 
 ---
 
