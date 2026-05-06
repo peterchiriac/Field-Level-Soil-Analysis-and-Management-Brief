@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This project implements a field-level agritech workflow that transforms spatial and soil data into management recommendations through spatial QA, field-level aggregation, and decision mapping
+This project implements a field-level agritech workflow that transforms spatial and soil data into management recommendations through spatial QA, field-level aggregation, and decision mapping.
 
 Farm Alpha was defined from a subset of Irish LPIS parcels and used as the analysis unit for integrating SoilGrids data into field-level outputs.
 
@@ -37,7 +37,7 @@ This workflow supports early-stage field assessment by identifying farm-wide con
 
 ### Farm Alpha Overview
 
-Farm Alpha defines the analysis unit used for field-level soil assessment within a subset of Irish LPIS parcels.
+Farm Alpha is the analysis unit used for field-level soil assessment within a subset of Irish LPIS parcels.
 
 ---
 
@@ -51,7 +51,7 @@ Interpretation: acidity is a farm-wide constraint requiring broad liming interve
 
 ### Soil Organic Carbon (SOC) Status
 
-Field-level SOC classification (g/kg) derived from SoilGrids aggregation.
+SOC classification (g/kg) derived from field-level aggregation of SoilGrids data.
 
 Interpretation: SOC levels are moderate to high across the farm and are not currently a primary management constraint.
 
@@ -71,7 +71,7 @@ The resulting map identifies where intervention should be prioritised and where 
 
 ---
 
-## Key Findings
+## Detailed Findings
 
 * Soil pH is consistently low across the farm, indicating a need for liming at scale
 * SOC levels are moderate to high, suggesting generally good organic matter status
@@ -122,7 +122,7 @@ The resulting map identifies where intervention should be prioritised and where 
 
 ### Spatial QA
 
-* Geometry validity checks
+* Geometry validation checks
 * Overlap detection
 * Area outlier analysis
 
