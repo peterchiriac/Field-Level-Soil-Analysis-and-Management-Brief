@@ -89,22 +89,24 @@ The resulting map identifies where intervention is required and where standard m
 
 ## Data Sources
 
-Field Boundaries
+### Field Boundaries
 
 * Irish LPIS parcel sample
-* Source CRS: EPSG:2157
-* Stored in PostGIS as EPSG:4326 (canonical)
+* Source CRS: `EPSG:2157`
+* Reprojected and stored in PostGIS using canonical `EPSG:4326`
 
-Soil Data
+---
+
+### Soil Data
 
 * SoilGrids raster layers
 * Variables:
     * pH
-    * SOC
+    * soil organic carbon (SOC)
     * clay
     * sand
-* Depth:
-    * 0–5 cm
+* Depth interval:
+    * `0–5 cm`
 
 ---
 
